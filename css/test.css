@@ -1,0 +1,14 @@
+@media (max-width: 32em) {
+  .view-content {
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    padding: 0.5rem;
+  }
+}
+@media (max-width: 24em) {
+  .view-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
