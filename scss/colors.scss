@@ -13,9 +13,11 @@
 
 $colors: (
   primary: (
+    ft: hsl(9, 97%, 95%),
     lt: hsl(9, 97%, 90%),
     md: hsl(9, 87%, 70%),
-    dk: hsl(9, 77%, 36%),
+    st: hsl(9, 87%, 60%),
+    dk: hsl(9, 87%, 46%),
   ),
   secondary: (
     lt: hsl(28, 98%, 85%),
@@ -28,6 +30,7 @@ $colors: (
     dk: hsl(144, 15%, 47%),
   ),
   light: (
+    ft: hsl(60, 8%, 93%),
     lt: hsl(60, 8%, 90%),
     md: hsl(60, 8%, 80%),
     dk: hsl(60, 8%, 70%),

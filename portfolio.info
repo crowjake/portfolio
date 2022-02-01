@@ -11,6 +11,7 @@ stylesheets[all][] = css/menu-toggle.theme.css
 stylesheets[all][] = css/colors.css
 stylesheets[all][] = css/fonts.css
 stylesheets[all][] = css/style.css
+stylesheets[all][] = css/ckeditor-accordion.css
 stylesheets[print][] = css/print.css
 
 ; Set theme settings
