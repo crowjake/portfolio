@@ -50,8 +50,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/themes/portfolio/favicon/favicon-16x16.png">
     <link rel="manifest" href="/themes/portfolio/favicon/site.webmanifest">
     <link rel="mask-icon" href="/themes/portfolio/favicon/safari-pinned-tab.svg" color="#668a74">
-    <meta name="msapplication-TileColor" content="#668a74">
-    <meta name="theme-color" content="#668a74">
+    <meta name="msapplication-TileColor" content="#2f5080">
+    <meta name="theme-color" content="#E9ECEF">
+    <script src="https://kit.fontawesome.com/05b27b0a6a.js" crossorigin="anonymous"></script>
   </head>
   <body class="<?php print implode(' ', $classes); ?>"<?php print backdrop_attributes($body_attributes); ?>>
     <?php print $page; ?>

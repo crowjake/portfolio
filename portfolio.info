@@ -16,4 +16,4 @@ stylesheets[print][] = css/print.css
 
 ; Set theme settings
 ; settings[color] = true
-; scripts[] = myscript.js
+scripts[] = scripts/functions.js
