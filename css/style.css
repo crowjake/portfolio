@@ -93,15 +93,6 @@ a:hover {
   text-decoration: underline;
 }
 
-.l-bottom {
-  background: transparent;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr var(--gap) 1fr var(--gap) 1fr var(--gap) 1fr var(--gap) 1fr var(--gap) 1fr var(--gap) 1fr var(--gap) 1fr var(--gap) 1fr var(--gap) 1fr var(--gap) 1fr var(--gap) 1fr;
-  grid-template-columns: repeat(12, 1fr);
-  gap: var(--gap);
-}
-
 .l-header-inner {
   background: transparent;
 }
@@ -171,7 +162,7 @@ a:hover {
 h1.site-name,
 .site-name {
   font-family: var(--ff);
-  font-size: clamp(3rem,1rem + 12vw, 5rem);
+  font-size: clamp(3rem, 1rem + 12vw, 5rem);
   line-height: 0.7em;
   max-width: 100%;
   padding-left: unset;
@@ -184,7 +175,7 @@ h1.site-name,
 .site-name a {
   color: var(--clr-accent-md);
   text-align: center;
-  font-size: clamp(3rem,1rem + 12vw, 5rem);
+  font-size: clamp(3rem, 1rem + 12vw, 5rem);
   font-weight: 700;
   -webkit-transition: color 0.5s ease-out;
   transition: color 0.5s ease-out;
@@ -519,9 +510,21 @@ article footer {
   display: grid;
   -ms-grid-columns: 1fr var(--gap) 40%;
   grid-template-columns: 1fr 40%;
+  -ms-grid-rows: auto;
+  grid-template-rows: auto;
   gap: var(--gap);
   max-width: 62rem;
   margin: 0 auto;
+}
+
+.l-bottom > *:nth-child(1) {
+  -ms-grid-row:1;
+  -ms-grid-column:1;
+}
+
+.l-bottom > *:nth-child(2) {
+  -ms-grid-row:1;
+  -ms-grid-column:3;
 }
 @media (max-width: 62em) {
   .l-bottom {
@@ -542,13 +545,20 @@ article footer {
     max-width: 30rem;
   }
 }
+.l-bottom :where(.block) {
+  background: white;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: var(--rad);
+  padding: var(--pad);
+}
 
 .block-views-latest-block {
-  background: white;
   -ms-grid-column-span: 1;
   grid-column: span 1;
-  -ms-grid-row-span: 2;
-  grid-row: span 2;
+  -ms-grid-row-span: 4;
+  grid-row: span 4;
 }
 @media (max-width: 62em) {
   .block-views-latest-block {
@@ -582,7 +592,7 @@ article footer {
 }
 @media (max-width: 62em) {
   .contactme,
-.block-contact-sitewide {
+  .block-contact-sitewide {
     -ms-grid-column-span: 2;
     grid-column: span 2;
   }
@@ -592,23 +602,10 @@ article footer {
   width: 50%;
 }
 
-.contactme,
-.block-views-latest-block,
-.block-views-projects-block,
-.block-contact-sitewide {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  border-radius: var(--rad);
-  padding: var(--pad);
-  -webkit-box-shadow: 2px 2px 2px 2px var(--rgb-dark-dk);
-          box-shadow: 2px 2px 2px 2px var(--rgb-dark-dk);
-}
-
 .contactme {
   margin-top: 6px;
-  -webkit-box-shadow: 0 0 0 4px #fff5, 0 0 0 8px rgba(var(--rgb-light-md), 0.7);
-          box-shadow: 0 0 0 4px #fff5, 0 0 0 8px rgba(var(--rgb-light-md), 0.7);
+  -webkit-box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3333333333), 0 0 0 8px rgba(var(--rgb-light-md), 0.7);
+          box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3333333333), 0 0 0 8px rgba(var(--rgb-light-md), 0.7);
 }
 .contactme article h2,
 .contactme footer {
@@ -617,6 +614,7 @@ article footer {
 
 /* FAQs - see ckeditor-accordian.css or .scss for more. */
 .faqs {
+  background: transparent;
   margin: calc(1rem + 5vw) 0;
   -ms-grid-column-span: 2;
   grid-column: span 2;
@@ -647,13 +645,13 @@ ul.primary li a {
   background: transparent;
 }
 ul.primary li.active a {
-  background-color: #fff0;
+  background-color: rgba(255, 255, 255, 0);
   border-color: var(--clr-accent-md);
   -o-border-image: linear-gradient(to bottom, var(--clr-accent-md) 80%, rgba(0, 0, 0, 0) 90%) 1;
      border-image: -webkit-gradient(linear, left top, left bottom, color-stop(80%, var(--clr-accent-md)), color-stop(90%, rgba(0, 0, 0, 0))) 1;
      border-image: linear-gradient(to bottom, var(--clr-accent-md) 80%, rgba(0, 0, 0, 0) 90%) 1;
 }
-ul.primary li a:hover {
+ul.primary li.active a:hover {
   border-color: white;
   -o-border-image: linear-gradient(to bottom, white 80%, rgba(0, 0, 0, 0) 90%) 1;
      border-image: -webkit-gradient(linear, left top, left bottom, color-stop(80%, white), color-stop(90%, rgba(0, 0, 0, 0))) 1;
@@ -744,7 +742,7 @@ input#edit-name {
 }
 @media (min-width: 48em) {
   .form-actions,
-.form-type-checkbox {
+  .form-type-checkbox {
     -ms-grid-column-span: 2;
     grid-column: span 2;
   }
