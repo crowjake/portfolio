@@ -567,6 +567,9 @@ article footer {
 @media (max-width: 62em) {
   .l-bottom :where(.block) {
     width: calc(50% - var(--gap50));
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
   }
 }
 @media (max-width: 48em) {

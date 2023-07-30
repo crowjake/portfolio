@@ -487,6 +487,7 @@ article{
     padding: var(--pad);
     @include max(lg){
       width:calc(50% - var(--gap50));
+      flex-grow:1;
     }
     @include max(md){
       width:100%;
