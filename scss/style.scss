@@ -36,14 +36,26 @@ $breakpoints: (
 /*Global*/
 
 :root{
-  --space:1rem;
-  --gap:calc(var(--space)*2);
-  --rad:calc(var(--space)*0.5);
-  --pad:var(--space);
-  --gap50:calc(var(--gap)*0.5);
-  --rad50:calc(var(--rad)*0.5);
-  --pad50:calc(var(--pad)*0.5);
+  --space:1rem; // rem is usually 16px
+  --gap:calc(var(--space)*2); // 32px
+  --rad:calc(var(--space)*0.5); // 8px
+  --pad:var(--space); // 16px
+  --gap50:calc(var(--gap)*0.5); // 16px
+  --rad50:calc(var(--rad)*0.5); // 4px
+  --pad50:calc(var(--pad)*0.5); // 8px
   --shad: 2px 2px 2px rgba(var(--rgb-dark-dk), 0.2);
+}
+
+html {
+  box-sizing: border-box;
+}
+
+* {
+  &,
+  &:before,
+  &:after {
+    box-sizing: inherit;
+    }
 }
 
 body{
@@ -461,10 +473,11 @@ article{
   @include max(lg){
     grid-template-columns:50% 50%;
     max-width:44rem;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
   }
   @include max(md){
-    display:flex;
-    flex-direction:column;
     max-width:30rem;
   }
   :where(.block){
@@ -472,33 +485,39 @@ article{
     height: fit-content;
     border-radius: var(--rad);
     padding: var(--pad);
+    @include max(lg){
+      width:calc(50% - var(--gap50));
+    }
+    @include max(md){
+      width:100%;
+    }
+  }
+  .faqs{
+    width:100%;
   }
 }
 
 .block-views-latest-block{
+  width:100%;
   grid-column: span 1;
     @include max(lg){grid-column: span 2;}
     @include max(lg){order:3;}
-  grid-row: span 4
+  grid-row: span 4;
 }
 
-.block-views-projects-block{
-        grid-column: span 1;
-        @include max(lg){grid-column: span 1;}
-}
-.contactme,
-.block-contact-sitewide{
-        grid-column: span 1;
-        @include max(lg){grid-column: span 2;}
-}
+// .contactme,
+// .block-contact-sitewide{
+//         grid-column: span 1;
+//         @include max(lg){grid-column: span 2;}
+// }
 
-.views-field-field-project-image{
-    width:50%
-}
+// .views-field-field-project-image{
+//     width:50%
+// }
 
 .contactme{
-  margin-top:6px;
-  box-shadow:0 0 0 4px #fff5, 0 0 0 8px rgba(var(--rgb-light-md), 0.7);
+  margin-block:var(--rad);
+  box-shadow:0 0 0 var(--rad50) #fff5, 0 0 0 8px rgba(var(--rgb-light-md), 0.7);
   article h2,
   footer{
     display:none;

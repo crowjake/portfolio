@@ -10,6 +10,16 @@
   --shad: 2px 2px 2px rgba(var(--rgb-dark-dk), 0.2);
 }
 
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
 body {
   font-family: var(--fb);
   background: var(--clr-light-lt);
@@ -531,17 +541,18 @@ article footer {
     -ms-grid-columns: 50% 50%;
     grid-template-columns: 50% 50%;
     max-width: 44rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 }
 @media (max-width: 48em) {
   .l-bottom {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
     max-width: 30rem;
   }
 }
@@ -553,8 +564,22 @@ article footer {
   border-radius: var(--rad);
   padding: var(--pad);
 }
+@media (max-width: 62em) {
+  .l-bottom :where(.block) {
+    width: calc(50% - var(--gap50));
+  }
+}
+@media (max-width: 48em) {
+  .l-bottom :where(.block) {
+    width: 100%;
+  }
+}
+.l-bottom .faqs {
+  width: 100%;
+}
 
 .block-views-latest-block {
+  width: 100%;
   -ms-grid-column-span: 1;
   grid-column: span 1;
   -ms-grid-row-span: 4;
@@ -574,38 +599,10 @@ article footer {
   }
 }
 
-.block-views-projects-block {
-  -ms-grid-column-span: 1;
-  grid-column: span 1;
-}
-@media (max-width: 62em) {
-  .block-views-projects-block {
-    -ms-grid-column-span: 1;
-    grid-column: span 1;
-  }
-}
-
-.contactme,
-.block-contact-sitewide {
-  -ms-grid-column-span: 1;
-  grid-column: span 1;
-}
-@media (max-width: 62em) {
-  .contactme,
-  .block-contact-sitewide {
-    -ms-grid-column-span: 2;
-    grid-column: span 2;
-  }
-}
-
-.views-field-field-project-image {
-  width: 50%;
-}
-
 .contactme {
-  margin-top: 6px;
-  -webkit-box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3333333333), 0 0 0 8px rgba(var(--rgb-light-md), 0.7);
-          box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3333333333), 0 0 0 8px rgba(var(--rgb-light-md), 0.7);
+  margin-block: var(--rad);
+  -webkit-box-shadow: 0 0 0 var(--rad50) rgba(255, 255, 255, 0.3333333333), 0 0 0 8px rgba(var(--rgb-light-md), 0.7);
+          box-shadow: 0 0 0 var(--rad50) rgba(255, 255, 255, 0.3333333333), 0 0 0 8px rgba(var(--rgb-light-md), 0.7);
 }
 .contactme article h2,
 .contactme footer {
