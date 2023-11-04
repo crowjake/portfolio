@@ -6,7 +6,6 @@
 @use '../scss/buttons';
 @import '../scss/breakpoints';
 @import "https://unpkg.com/open-props";
-@import "https://unpkg.com/open-props/colors-hsl.min.css";
 
 :root{
   --page-width:clamp(21rem,calc(100vw - 5rem),90rem);
@@ -246,7 +245,7 @@ footer .links{
     grid-template-rows: 1.2fr auto auto auto 0.98fr;
     box-shadow: var(--shadow-3);
     box-shadow:var(--shadow-3);
-    font-size: clamp(0.9rem,2.5vw,1.25rem);
+    font-size: clamp(0.9rem,2vw,1.16rem);
     >div .field-content{
       opacity: 0;
       z-index:200;

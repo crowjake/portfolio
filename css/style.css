@@ -1,6 +1,5 @@
 @charset "UTF-8";
 @import "https://unpkg.com/open-props";
-@import "https://unpkg.com/open-props/colors-hsl.min.css";
 /* Box sizing rules */
 *,
 *::before,
@@ -232,12 +231,10 @@ img:not([alt]) {
   padding-inline: var(--size-1);
 }
 .layout :where(a):where([href]) {
-  -webkit-text-decoration-color: var(--indigo-2);
-          text-decoration-color: var(--indigo-2);
+  text-decoration-color: var(--indigo-2);
 }
 .layout :where(a):where([href]):where(:visited) {
-  -webkit-text-decoration-color: var(--grape-2);
-          text-decoration-color: var(--grape-2);
+  text-decoration-color: var(--grape-2);
 }
 .layout :where(a):where(:not(:hover)) {
   text-decoration: inherit;
@@ -404,8 +401,7 @@ img:not([alt]) {
   color: var(--green-1);
 }
 .layout :where(abbr) {
-  -webkit-text-decoration-color: var(--blue-5);
-          text-decoration-color: var(--blue-5);
+  text-decoration-color: var(--blue-5);
 }
 .layout :where(dialog) {
   background-color: var(--surface-1);
@@ -913,8 +909,7 @@ footer .links ul a:hover {
   -webkit-animation: var(--animation-blink);
           animation: var(--animation-blink);
   text-decoration: underline;
-  -webkit-text-decoration-color: var(--grape-2);
-          text-decoration-color: var(--grape-2);
+  text-decoration-color: var(--grape-2);
 }
 .block-system-main-menu .leaf a.active,
 .menu-main .leaf a.active {
@@ -981,7 +976,7 @@ footer .links ul a:hover {
   -webkit-box-shadow: var(--shadow-3);
           box-shadow: var(--shadow-3);
   box-shadow: var(--shadow-3);
-  font-size: clamp(0.9rem, 2.5vw, 1.25rem);
+  font-size: clamp(0.9rem, 2vw, 1.16rem);
 }
 .block-views-releases-block-1 .tile > *:nth-child(1) {
   -ms-grid-row: 1;
