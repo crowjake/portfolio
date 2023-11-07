@@ -255,12 +255,14 @@ footer .links{
       transition: opacity 0.5s;
       z-index: -200;
       pointer-events: none;
+      touch-action: none;
     }
     &:focus-within,
     &:hover{
       .field-content{
         z-index:200;
         pointer-events: auto;
+        touch-action: auto;
         opacity:1;
       }
     }

@@ -1008,10 +1008,14 @@ footer .links ul a:hover {
   transition: opacity 0.5s;
   z-index: -200;
   pointer-events: none;
+  -ms-touch-action: none;
+      touch-action: none;
 }
 .block-views-releases-block-1 .tile:focus-within .field-content, .block-views-releases-block-1 .tile:hover .field-content {
   z-index: 200;
   pointer-events: auto;
+  -ms-touch-action: auto;
+      touch-action: auto;
   opacity: 1;
 }
 .block-views-releases-block-1 .tile:focus-within img, .block-views-releases-block-1 .tile:hover img {
