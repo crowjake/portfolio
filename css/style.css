@@ -958,6 +958,11 @@ footer .links ul a:hover {
       flex-wrap: wrap;
   gap: clamp(0.9rem, 4vw, 1.5rem);
 }
+.block-views-releases-block-1 a[href] {
+  -ms-touch-action: inherit;
+      touch-action: inherit;
+  pointer-events: inherit;
+}
 .block-views-releases-block-1 .tile {
   text-align: center;
   color: var(--gray-5);

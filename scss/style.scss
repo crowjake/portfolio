@@ -233,6 +233,10 @@ footer .links{
     flex-wrap:wrap;
     gap:clamp(0.9rem,4vw,1.5rem);
   }
+  a[href]{
+    touch-action: inherit;
+    pointer-events: inherit;
+  }
   .tile{
     text-align:center;
     color: var(--gray-5);
