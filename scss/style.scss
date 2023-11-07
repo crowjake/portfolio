@@ -193,7 +193,7 @@ footer .links{
 			text-decoration:underline;
 		}
 		&.active:hover{
-			font-wieght:bolder;
+			font-weight:bolder;
 		}
   }
 }
@@ -246,26 +246,29 @@ footer .links{
     box-shadow: var(--shadow-3);
     box-shadow:var(--shadow-3);
     font-size: clamp(0.9rem,2vw,1.16rem);
-    >div .field-content{
-      opacity: 0;
-      z-index:200;
-      transition: opacity 0.5s;
-    }
     >div,
     >span{
       display:contents
+    }
+    >div .field-content{
+      opacity: 0;
+      transition: opacity 0.5s;
+      z-index: -200;
+      pointer-events: none;
+    }
+    &:focus-within,
+    &:hover{
+      .field-content{
+        z-index:200;
+        pointer-events: auto;
+        opacity:1;
+      }
     }
     &:focus-within img,
     &:hover img{
       filter: brightness(0.2);
       z-index:0;
         }
-    &:focus-within,
-    &:hover{
-      .field-content{
-        opacity:1;
-      }
-    }
     &.empty,
     &:empty{
       height:0;
