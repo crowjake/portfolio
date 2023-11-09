@@ -223,6 +223,13 @@ footer .links{
   }
 }
 
+// prevent touch devices from allowing click events before hover actions
+
+@keyframes become-clickable {
+  0% {pointer-events: none;}
+  100% {pointer-events: auto;}
+}
+
 // .block-views-releases-block .view-content,
 .block-views-releases-block-1{
   .view-content{
@@ -259,14 +266,12 @@ footer .links{
       transition: opacity 0.5s;
       z-index: -200;
       pointer-events: none;
-      touch-action: none;
     }
     &:focus-within,
     &:hover{
       .field-content{
         z-index:200;
-        pointer-events: auto;
-        touch-action: auto;
+        animation: become-clickable 1ms both;
         opacity:1;
       }
     }

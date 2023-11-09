@@ -224,12 +224,6 @@ img:not([alt]) {
   -ms-touch-action: manipulation;
       touch-action: manipulation;
 }
-.layout :where(a) {
-  margin-block: calc(var(--size-1) * -1);
-  margin-inline: calc(var(--size-1) * -1);
-  padding-block: var(--size-1);
-  padding-inline: var(--size-1);
-}
 .layout :where(a):where([href]) {
   text-decoration-color: var(--indigo-2);
 }
@@ -947,6 +941,23 @@ footer .links ul a:hover {
   border-radius: var(--radius-2);
 }
 
+@-webkit-keyframes become-clickable {
+  0% {
+    pointer-events: none;
+  }
+  100% {
+    pointer-events: auto;
+  }
+}
+
+@keyframes become-clickable {
+  0% {
+    pointer-events: none;
+  }
+  100% {
+    pointer-events: auto;
+  }
+}
 .block-views-releases-block-1 .view-content {
   margin-top: 2rem;
   margin-bottom: clamp(2rem, 5vw, 5.5rem);
@@ -1013,14 +1024,11 @@ footer .links ul a:hover {
   transition: opacity 0.5s;
   z-index: -200;
   pointer-events: none;
-  -ms-touch-action: none;
-      touch-action: none;
 }
 .block-views-releases-block-1 .tile:focus-within .field-content, .block-views-releases-block-1 .tile:hover .field-content {
   z-index: 200;
-  pointer-events: auto;
-  -ms-touch-action: auto;
-      touch-action: auto;
+  -webkit-animation: become-clickable 1ms both;
+          animation: become-clickable 1ms both;
   opacity: 1;
 }
 .block-views-releases-block-1 .tile:focus-within img, .block-views-releases-block-1 .tile:hover img {
