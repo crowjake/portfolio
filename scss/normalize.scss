@@ -162,12 +162,12 @@
 		touch-action: manipulation;
 	}
 
-	:where(a) {
-		margin-block: calc(var(--size-1)*-1);
-		margin-inline: calc(var(--size-1)*-1);
-		padding-block: var(--size-1);
-		padding-inline: var(--size-1);
-	}
+	// :where(a) {
+	// 	margin-block: calc(var(--size-1)*-1);
+	// 	margin-inline: calc(var(--size-1)*-1);
+	// 	padding-block: var(--size-1);
+	// 	padding-inline: var(--size-1);
+	// }
 
 	:where(a):where([href]) {
 		text-decoration-color: var(--indigo-2);
