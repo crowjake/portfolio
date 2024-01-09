@@ -1,13 +1,24 @@
-//			Contents:
-//			========
-//		 0 - Sass
-//		 1 - Global
-//		 2 - Sass
-//		 3 - Menus
-//		 4 - Bottom Area
-//		 5 - Overrides
+//      Contents:
+//      ========
+//    - SASS
+//    - Global
+//    - Colors
+//    - Fonts
+//    - Page Styling
+//    - Header
+//    - Content
+//    - Menus
+//    - Front Page
+//    - Bottom Area
+//    - Tabs
+//    - Input & Forms
+//    - Overrides
+//    - CKEditor Accordion
+//    - Menu Toggle
+//    - Psychology today extra styling
 
-// SASS
+/* SASS */
+
 @use 'sass:map';
 @use 'sass:color';
 
@@ -16,7 +27,7 @@ $breakpoints: (
   sm: 36em, // 576px ``
   md: 48em, // 768px ``
   lg: 62em, // 992px ``
-  xl: 75em // 1200px#A21515
+  xl: 75em // 1200px ``
 );
 
 @mixin max($key) {
@@ -47,6 +58,15 @@ $breakpoints: (
   --site-name-size:clamp(2.5rem,calc(0.5rem + 6vw), 5rem);
 }
 
+/* Colors */
+@import 'colors';
+
+
+/* Fonts */
+@import 'fonts';
+
+/* Page Styling */
+
 html {
   box-sizing: border-box;
 }
@@ -58,6 +78,7 @@ html {
     box-sizing: inherit;
     }
 }
+
 
 body{
   font-family: var(--fb);
@@ -554,6 +575,11 @@ article{
   }
 }
 
+.view-projects .views-field-view-node span,
+.views-row.Post .views-field-view-node span{
+  text-align:right;
+}
+
 /* Tabs */
 
 .tabs{
@@ -582,12 +608,7 @@ ul.primary li{
   }
 }
 
-.view-projects .views-field-view-node span,
-.views-row.Post .views-field-view-node span{
-  text-align:right;
-}
-
-/* Forms */
+/* Input & Forms */
 
 
 .block.contactme,
@@ -795,6 +816,13 @@ input[type="radio"]{
         display:none!important;
     }
 }
+
+/* CKEditor Accordion */
+@import 'ckeditor-accordion';
+
+
+/* Menu Toggle */
+@import 'menu-toggle.theme';
 
 /* Psychology today extra styling */
 

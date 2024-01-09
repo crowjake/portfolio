@@ -1,4 +1,8 @@
+/* SASS */
 /*Global*/
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap");
 :root {
   --space:1rem;
   --gap:calc(var(--space)*2);
@@ -11,6 +15,74 @@
   --site-name-size:clamp(2.5rem,calc(0.5rem + 6vw), 5rem);
 }
 
+/* Colors */
+:root {
+  --melon: hsla(9, 97%, 86%, 1);
+  --pale-pink: hsla(9, 88%, 90%, 1);
+  --misty-rose: hsla(8, 74%, 92%, 1);
+  --isabelline: hsla(9, 48%, 95%, 1);
+  --platinum: hsla(60, 8%, 90%, 1);
+  --alabaster: hsla(144, 15%, 87%, 1);
+  --linen: hsla(32, 31%, 89%, 1);
+  --champagne-pink: hsla(19, 100%, 93%, 1);
+  --peach-puff: hsla(25, 100%, 86%, 1);
+  --peach-crayola: hsla(28, 98%, 80%, 1);
+}
+
+:root {
+  --clr-primary-ft: hsl(9, 97%, 95%);
+  --clr-primary-lt: hsl(9, 97%, 90%);
+  --clr-primary-md: hsl(9, 87%, 70%);
+  --clr-primary-st: hsl(9, 87%, 60%);
+  --clr-primary-dk: hsl(9, 87%, 46%);
+  --clr-secondary-lt: hsl(28, 98%, 85%);
+  --clr-secondary-md: hsl(28, 98%, 70%);
+  --clr-secondary-dk: hsl(28, 98%, 50%);
+  --clr-accent-lt: hsl(144, 15%, 87%);
+  --clr-accent-md: hsl(144, 15%, 67%);
+  --clr-accent-dk: hsl(144, 15%, 47%);
+  --clr-light-ft: hsl(60, 8%, 93%);
+  --clr-light-lt: hsl(60, 8%, 90%);
+  --clr-light-md: hsl(60, 8%, 80%);
+  --clr-light-dk: hsl(60, 8%, 70%);
+  --clr-dark-lt: hsl(60, 0%, 51%);
+  --clr-dark-md: hsl(60, 0%, 41%);
+  --clr-dark-dk: hsl(60, 0%, 21%);
+}
+
+:root {
+  --rgb-primary-ft: 255, 234, 230;
+  --rgb-primary-lt: 254, 212, 205;
+  --rgb-primary-md: 245, 132, 112;
+  --rgb-primary-st: 242, 91, 64;
+  --rgb-primary-dk: 219, 46, 15;
+  --rgb-secondary-lt: 254, 214, 179;
+  --rgb-secondary-md: 253, 174, 104;
+  --rgb-secondary-dk: 252, 119, 3;
+  --rgb-accent-lt: 217, 227, 221;
+  --rgb-accent-md: 158, 183, 168;
+  --rgb-accent-dk: 102, 138, 116;
+  --rgb-light-ft: 239, 239, 236;
+  --rgb-light-lt: 232, 232, 227;
+  --rgb-light-md: 208, 208, 200;
+  --rgb-light-dk: 185, 185, 172;
+  --rgb-dark-lt: 130, 130, 130;
+  --rgb-dark-md: 105, 105, 105;
+  --rgb-dark-dk: 54, 54, 54;
+}
+
+:root {
+  --white:white;
+  --error:var(--clr-primary-dk);
+}
+
+/* Fonts */
+:root {
+  --ff:Alegreya Sans, sans-serif;
+  --fb:Lora, serif;
+}
+
+/* Page Styling */
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -659,6 +731,11 @@ article footer {
           box-shadow: -2rem 0 0 white;
 }
 
+.view-projects .views-field-view-node span,
+.views-row.Post .views-field-view-node span {
+  text-align: right;
+}
+
 /* Tabs */
 .tabs {
   background: var(--clr-primary-ft);
@@ -690,12 +767,7 @@ ul.primary li.active a:hover {
      border-image: linear-gradient(to bottom, white 80%, rgba(0, 0, 0, 0) 90%) 1;
 }
 
-.view-projects .views-field-view-node span,
-.views-row.Post .views-field-view-node span {
-  text-align: right;
-}
-
-/* Forms */
+/* Input & Forms */
 .block.contactme,
 .block-contact-sitewide {
   height: -webkit-fit-content;
@@ -944,6 +1016,174 @@ input[type=radio] ~ .option {
     display: none !important;
   }
 }
+/* CKEditor Accordion */
+/*
+  Accordion tabs that have not been created using Javascript
+*/
+/* clearfix */
+.ckeditor-accordion-container > dl:before,
+.ckeditor-accordion-container > dl:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.ckeditor-accordion-container > dl:after {
+  clear: both;
+}
+
+/* CKEditor accordion */
+.ckeditor-accordion-container > dl,
+.ckeditor-accordion-container > dl dt,
+.ckeditor-accordion-container > dl dd {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.ckeditor-accordion-container > dl {
+  position: relative;
+  border: 1px solid var(--clr-primary-md);
+  border: none;
+}
+
+/* label / tab */
+.ckeditor-accordion-container > dl dt {
+  position: relative;
+}
+
+.ckeditor-accordion-container > dl dt > .ckeditor-accordion-toggle {
+  display: inline-block;
+  position: absolute;
+  padding: 0 10px;
+  width: 30px;
+  height: 30px;
+  z-index: 1;
+  top: calc(50% - 1px);
+  left: 11px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.ckeditor-accordion-container > dl dt > .ckeditor-accordion-toggle:before,
+.ckeditor-accordion-container > dl dt > .ckeditor-accordion-toggle:after {
+  background: var(--clr-primary-md);
+  -webkit-transition: all 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  content: "";
+  display: block;
+  height: 2px;
+  position: absolute;
+  width: 10px;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  -webkit-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+  will-change: transform;
+}
+
+.ckeditor-accordion-container > dl dt > .ckeditor-accordion-toggle:before {
+  left: 13px;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+.ckeditor-accordion-container > dl dt > .ckeditor-accordion-toggle:after {
+  right: 13px;
+  left: auto;
+  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+
+.ckeditor-accordion-container > dl dt.active > .ckeditor-accordion-toggle:before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  background: white;
+}
+
+.ckeditor-accordion-container > dl dt.active > .ckeditor-accordion-toggle:after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  background: white;
+}
+
+.ckeditor-accordion-container > dl dt > a {
+  display: block;
+  padding: 10px 15px 10px 50px;
+  background-color: transparent;
+  color: var(--clr-dark-lt);
+  cursor: pointer;
+  -webkit-transition: background-color 300ms;
+  transition: background-color 300ms;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.1333333333);
+}
+
+.ckeditor-accordion-container > dl dt > a:hover {
+  border-bottom: 3px solid rgba(var(--rgb-light-md), 0.3);
+  text-decoration: none;
+}
+
+.ckeditor-accordion-container > dl dt.active > a {
+  background-color: var(--clr-primary-md);
+  border-bottom: 3px solid var(--clr-primary-lt);
+  color: #fff;
+}
+
+.ckeditor-accordion-container > dl dt.active > a:hover {
+  border-bottom: 3px solid var(--clr-primary-lt);
+  text-decoration: underline;
+  color: #fff;
+}
+
+.ckeditor-accordion-container > dl dt:last-of-type > a {
+  border-bottom: 0;
+}
+
+.ckeditor-accordion-container > dl dt:last-of-type.active > a {
+  border-bottom: 3px solid var(--clr-primary-lt);
+}
+
+.ckeditor-accordion-container > dl dt:hover:last-of-type > a {
+  -webkit-box-shadow: inset 0 -3px rgba(var(--rgb-light-md), 0.3);
+          box-shadow: inset 0 -3px rgba(var(--rgb-light-md), 0.3);
+}
+
+.ckeditor-accordion-container > dl dt.active:hover:last-of-type > a {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+/* contents */
+.ckeditor-accordion-container > dl dd {
+  display: none;
+  padding: 0 15px;
+  margin: 0;
+  will-change: height;
+}
+
+.block .ckeditor-accordion-container {
+  border-radius: var(--pad);
+  overflow: clip;
+  -webkit-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2705882353), 0 0 0 3px rgba(var(--rgb-light-lt), 1);
+          box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2705882353), 0 0 0 3px rgba(var(--rgb-light-lt), 1);
+}
+.block .ckeditor-accordion-container dl {
+  margin-top: 0;
+}
+.block .ckeditor-accordion-container dt {
+  font-family: var(--ff);
+  font-size: x-large;
+  background: var(--clr-light-lt);
+}
+.block .ckeditor-accordion-container dd.active {
+  background: white;
+}
+.block .ckeditor-accordion-container dd.active p {
+  background: white;
+  -webkit-box-shadow: 0 0 0 16px white;
+          box-shadow: 0 0 0 16px white;
+}
+
+/* Menu Toggle */
 /* Psychology today extra styling */
 p:has(.sx-verified-seal) {
   margin-top: 3em;

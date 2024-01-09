@@ -5,15 +5,16 @@ type = theme
 version = 1.0
 backdrop = 1.x
 
-stylesheets[all][] = css/html.css
-stylesheets[all][] = css/grid-flexbox.css
-stylesheets[all][] = css/menu-toggle.theme.css
-stylesheets[all][] = css/colors.css
-stylesheets[all][] = css/fonts.css
-stylesheets[all][] = css/style.css
-stylesheets[all][] = css/ckeditor-accordion.css
-stylesheets[print][] = css/print.css
 
+; Our CSS
+stylesheets[all][] = css/style.css
+
+; Override CSS for blanks
+stylesheets[all][] = css/menu-toggle.theme.css
+stylesheets[all][] = css/ckeditor-accordion.css
+stylesheets[all][] = css/grid-flexbox.css
+stylesheets[print][] = css/print.css
+stylesheets[all][] = css/html.css
 ; Set theme settings
 ; settings[color] = true
 ; scripts[] = myscript.js
