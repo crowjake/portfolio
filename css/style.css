@@ -8,6 +8,7 @@
   --rad50:calc(var(--rad)*0.5);
   --pad50:calc(var(--pad)*0.5);
   --shad: 2px 2px 2px rgba(var(--rgb-dark-dk), 0.2);
+  --site-name-size:clamp(2.5rem,calc(0.5rem + 6vw), 5rem);
 }
 
 html {
@@ -110,6 +111,16 @@ a:hover {
 .l-page-title {
   text-align: center;
 }
+.l-page-title h1 {
+  font-size: calc(0.75 * var(--site-name-size));
+  color: var(--clr-primary-md);
+  text-align: center;
+  margin-top: var(--space);
+  margin-bottom: 0;
+  background: var(--clr-primary-ft);
+  padding-top: var(--space);
+  border-radius: var(--rad) var(--rad) 0 0;
+}
 
 .l-page-title,
 .l-content,
@@ -172,8 +183,8 @@ a:hover {
 h1.site-name,
 .site-name {
   font-family: var(--ff);
-  font-size: clamp(3rem, 1rem + 12vw, 5rem);
-  line-height: 0.7em;
+  font-size: var(--site-name-size);
+  line-height: 0.9em;
   max-width: 100%;
   padding-left: unset;
   text-indent: unset;
@@ -181,11 +192,18 @@ h1.site-name,
   text-transform: uppercase;
   margin-bottom: var(--gap50);
 }
+@media only screen and (max-width: 300px) {
+  h1.site-name,
+  .site-name {
+    word-break: break-all;
+  }
+}
 
 .site-name a {
   color: var(--clr-accent-md);
   text-align: center;
-  font-size: clamp(3rem, 1rem + 12vw, 5rem);
+  font-size: inherit;
+  line-height: inherit;
   font-weight: 700;
   -webkit-transition: color 0.5s ease-out;
   transition: color 0.5s ease-out;
@@ -229,6 +247,16 @@ h1.site-name,
   border-radius: var(--rad);
   -webkit-box-shadow: var(--shad);
           box-shadow: var(--shad);
+}
+
+.memberships {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: left;
+  margin-left: 1em;
 }
 
 /* Content */
@@ -632,6 +660,10 @@ article footer {
 }
 
 /* Tabs */
+.tabs {
+  background: var(--clr-primary-ft);
+}
+
 ul.primary li {
   float: left;
   margin: 0 0.15em 0 0;
@@ -911,4 +943,12 @@ input[type=radio] ~ .option {
   .sm::after {
     display: none !important;
   }
+}
+/* Psychology today extra styling */
+p:has(.sx-verified-seal) {
+  margin-top: 3em;
+  text-align: center;
+  min-width: 100%;
+  background-position: center;
+  mix-blend-mode: multiply;
 }
